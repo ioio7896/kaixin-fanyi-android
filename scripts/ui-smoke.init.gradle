@@ -1,0 +1,20 @@
+// UI-only validation: exclude model assets/native libraries and keep outputs separate.
+// Never use this APK for translation; the normal build does not load this init script.
+gradle.beforeProject { project ->
+    if (project.path == ':app') {
+        project.layout.buildDirectory.set(project.rootProject.layout.projectDirectory.dir('.ui-smoke-build/app'))
+    }
+}
+gradle.afterProject { project, state ->
+    if (project.path == ':app') {
+        project.android.sourceSets.main.assets.setSrcDirs([])
+        project.android.sourceSets.androidTest.java.srcDir(project.rootProject.file('scripts/ui-smoke'))
+        project.android.packaging.jniLibs.excludes.add('**/*.so')
+        project.android.defaultConfig.testInstrumentationRunner = 'com.localtranslate.hymt2.UiLayoutSmokeInstrumentation'
+        project.tasks.configureEach { task ->
+            if (task.name == 'packageBundledModel' || task.name.startsWith('configureCMake') || task.name.startsWith('buildCMake') || task.name.startsWith('externalNativeBuild')) {
+                task.enabled = false
+            }
+        }
+    }
+}

@@ -1,0 +1,24 @@
+<shortcuts xmlns:android="http://schemas.android.com/apk/res/android">
+    <shortcut
+        android:enabled="true"
+        android:icon="@drawable/ic_translate"
+        android:shortcutId="new_translation"
+        android:shortcutLongLabel="@string/shortcut_new_long"
+        android:shortcutShortLabel="@string/shortcut_new_short">
+        <intent
+            android:action="com.localtranslate.hymt2.action.NEW_TRANSLATION"
+            android:targetClass="com.localtranslate.hymt2.MainActivity"
+            android:targetPackage="com.localtranslate.hymt2" />
+    </shortcut>
+    <shortcut
+        android:enabled="true"
+        android:icon="@drawable/ic_translate"
+        android:shortcutId="paste_translate"
+        android:shortcutLongLabel="@string/shortcut_paste_long"
+        android:shortcutShortLabel="@string/shortcut_paste_short">
+        <intent
+            android:action="com.localtranslate.hymt2.action.PASTE_TRANSLATE"
+            android:targetClass="com.localtranslate.hymt2.MainActivity"
+            android:targetPackage="com.localtranslate.hymt2" />
+    </shortcut>
+</shortcuts>

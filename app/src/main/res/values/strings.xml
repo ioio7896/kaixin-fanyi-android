@@ -1,0 +1,7 @@
+<resources>
+    <string name="quick_tile_label">新建翻译</string>
+    <string name="shortcut_new_short">新建翻译</string>
+    <string name="shortcut_new_long">打开空白翻译页</string>
+    <string name="shortcut_paste_short">粘贴并翻译</string>
+    <string name="shortcut_paste_long">翻译剪贴板中的文本</string>
+</resources>

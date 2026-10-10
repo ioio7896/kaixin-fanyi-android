@@ -1,0 +1,27 @@
+# Android and Gradle generated files
+.gradle/
+.gradle-codex/
+.kotlin/
+.cxx/
+**/build/
+**/.cxx/
+.ui-smo/
+.ui-smoke-build/
+
+# Local machine configuration and signing material
+local.properties
+*.jks
+*.keystore
+*.p12
+*.pfx
+*.pem
+*.key
+*.env
+.env.*
+
+# Build outputs
+*.apk
+*.aab
+
+# Fetched build dependency; restore with scripts/bootstrap-llama.ps1
+third_party/llama.cpp/
